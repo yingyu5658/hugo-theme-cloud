@@ -1,0 +1,25 @@
+<head>
+        <link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css" />
+</head>
+
+<div id="waline">
+        <hr>
+</div>
+
+<script type="module">
+        const configServerURL = {{ .Site.Params.waline.serverURL | safeHTML }}
+        import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+    init({
+      el: '#waline',
+      comment: true,
+      serverURL: 'configServerURL',
+      path: '{{ .RelPermalink }}',  // 动态获取Hugo路径
+      pageSize: '10',
+      wordLimit: '1000',
+      emoji: [
+        '//unpkg.com/@waline/emojis@1.2.0/weibo',
+        '//unpkg.com/@waline/emojis@1.2.0/qq',
+        '//unpkg.com/@waline/emojis@1.2.0/tw-emoji',
+      ],
+    })
+</script>

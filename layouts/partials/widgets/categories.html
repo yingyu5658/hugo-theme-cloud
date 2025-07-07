@@ -1,0 +1,20 @@
+{{- if .Site.Params.widgets.categories }}
+<div class="widget-categories widget">
+  <h4 class="widget-misc__title widget__title">{{ T "CATEGORIES" }}</h4>
+  
+  {{- if gt (len .Site.Taxonomies.categories) 0 }}
+  <ul class="widget-categories__list">
+    {{- range .Site.Taxonomies.categories.ByCount }}
+      <li class="widget-categories__item">
+        <a href="{{ .Page.RelPermalink }}" class="widget-categories__link">
+          <span class="widget-categories__name">{{ .Page.Title }}</span>
+          <span class="widget-categories__count">{{ .Count }}</span>
+        </a>
+      </li>
+    {{- end }}
+  </ul>
+  {{- else }}
+  <p class="widget-categories__empty">{{ T "NO_CATEGORIES" }}</p>
+  {{- end }}
+</div>
+{{- end }}
