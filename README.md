@@ -39,9 +39,22 @@ theme = ["cloud"]
   post_meta = ["date"]
   mainSections = ["post"]
   copyright = "©2024 映屿. All rights reserved."
+  giscusDarkTheme = "dark_dimmed"
 
-[Params.waline]
-  serverURL = "waline.yingyu5658.me"
+[Params.giscus]
+repo = ""
+repoId = ""
+category = ""
+categoryId = ""
+mapping = ""
+strict = 0
+reactionsEnabled = 1
+emitMetadata = 0
+inputPosition = "bottom"
+theme = "noborder_light"
+lang = "zh-CN"
+loading = "lazy"
+
 
 [Params.topbar]
   subtitle = "yingyu5658的数字花园"
@@ -64,23 +77,6 @@ theme = ["cloud"]
   [[Params.widgets.misc.custom]]
   title = "FEED"
   url = "/"
-
-[Params.widgets.search]
-  title = "search"
-  placeholder = "search..."
-
-[markup]
-  defaultMarkdownHandler = "goldmark"
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
-
-[markup.highlight]
-codeFences = false # 代码高亮
-noClasses = true
-
-[outputFormats.RSS]
-  baseName = "atom"
 ```
 
 ## 贡献指南
